@@ -52,18 +52,67 @@ write.csv(grid, 'prob11.csv')
 
 maxprod <- 0
 maxloc <- c(1, 1)
+direction <- 'none'
+
+# left/right
 for (i in 1:nrow(grid)) {
   for (j in 1:(ncol(grid)-3)) {
     prod <- grid[i, j] * grid[i, j + 1] * grid[i, j + 2] * grid[i, j + 3]
     if (prod > maxprod) {
       maxprod <- prod
       maxloc <- c(i, j)
+      direction <- 'right'
     }
   }
 }
 
+# up/down
 for (i in 1:(nrow(grid)-3)) {
   for (j in 1:ncol(grid)) {
-    prod <- grid[]
+    prod <- grid[i, j] * grid[i + 1, j] * grid[i + 2, j] * grid[i + 3, j]
+    if (prod > maxprod) {
+      maxprod <- prod
+      maxloc <- c(i, j)
+      direction <- 'down'
+    }
   }
 }
+
+# diagonally down
+for (i in 1:(nrow(grid)-3)) {
+  for (j in 1:(ncol(grid)-3)) {
+    prod <- grid[i, j] * grid[i+1, j+1] * grid[i+2, j+2] * grid[i+3, j+3]
+    if (prod > maxprod) {
+      maxprod <- prod
+      maxloc <- c(i, j)
+      direction <- 'diagonal down'
+    }
+  }
+}
+
+# diagonally up
+for (i in 4:nrow(grid)) {
+  for (j in 1:(ncol(grid)-3)) {
+    prod <- grid[i,j] * grid[i-1, j+1] * grid[i-2, j+2] * grid[i-3, j+3]
+    if (prod > maxprod) {
+      maxprod <- prod
+      maxloc <- c(i, j)
+      direction <- 'diagonal up'
+    }
+  }
+}
+
+maxprod
+maxloc
+direction
+
+# > maxprod
+# [1] 70600674
+# > maxloc
+# [1] 16  4
+# > direction
+# [1] "diagonal up"
+
+paste('The maximum product is ', grid[16,4], '*', grid[15,5], '*', grid[14,6], '*', grid[13,7], ' = ', maxprod)
+
+
