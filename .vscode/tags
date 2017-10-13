@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+found	../p12.py	/^        found = True$/;"	kind:variable	line:67
+found	../p12.py	/^found = False$/;"	kind:variable	line:62
+n	../p12.py	/^n = 1$/;"	kind:variable	line:63
+nd	../p12.py	/^    nd = triangle_num_divisors(n).pop() $/;"	kind:variable	line:65
+num_divisors	../p12.py	/^def num_divisors(n):$/;"	kind:function	line:40
+p12.py	../p12.py	1;"	kind:file	line:1
+triangle_num_divisors	../p12.py	/^def triangle_num_divisors(n): $/;"	kind:function	line:47
+triangle_numbers	../p12.py	/^def triangle_numbers(n):$/;"	kind:function	line:27
